@@ -1,7 +1,7 @@
 numpy
 scikit-learn
 pandas
-pickle
+pickle5
 xgboost
 streamlit
 Pillow
