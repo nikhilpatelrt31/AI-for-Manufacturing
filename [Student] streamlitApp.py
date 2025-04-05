@@ -5,9 +5,7 @@ import numpy as np
 from PIL import Image
 
 # Set the page configuration of the app, including the page title, icon, and layout.
-"""
-Your Code Here
-"""
+st.set_page_config(page_title="Timelytics", page_icon=":pencil:", layout="wide")
 
 # Display the title and captions for the app.
 st.title("Timelytics: Optimize your supply chain with advanced forecasting techniques.")
@@ -23,9 +21,7 @@ st.caption(
 
 # Load the trained ensemble model from the saved pickle file.
 modelfile = "./voting_model.pkl"
-"""
-Your Code Here
-"""
+voting_model = pickle.load(open(modelfile, "rb"))
 
 # Caching the model for faster loading
 @st.cache_resource
@@ -82,9 +78,7 @@ with st.sidebar:
         "Geolocation State of the Seller", value=20
     )
     distance = st.number_input("Distance", value=475.35)
-    """
-    Your Code Here
-    """
+    submit = st.button(label="Predict Wait Time!")
 
 
 # Define the submit button for the input parameters.
@@ -121,9 +115,7 @@ with st.container():
     }
 
     # Create a DataFrame from the sample dataset.
-    """
-    Your Code Here
-    """
+    df = pd.DataFrame(data)
 
     # Display the sample dataset in the Streamlit app.
     st.header("Sample Dataset")
